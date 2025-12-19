@@ -40,6 +40,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     }
 
     public void startGame() {
+
         timer.start();
     }
 
@@ -371,16 +372,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
             System.out.println("BOT MODE: " + botEnabled);
         }
 
-        // SECRET CHEAT: press 6 then 9
-        if (e.getKeyCode() == KeyEvent.VK_6) {
-            lastKey = 6;
-        } else if (e.getKeyCode() == KeyEvent.VK_9 && lastKey == 6) {
-            botEnabled = !botEnabled;
-            lastKey = -1;
-            System.out.println("BOT MODE (69): " + botEnabled);
-        } else {
-            lastKey = -1;
-        }
+
 
         // Normal player control (no 180-degree reversal)
         Direction d = snake.getDirection();
